@@ -3,7 +3,7 @@
 terraform {
   backend "s3" {
     # Replace this with your bucket name!
-    bucket         = "prosperous-bucket-2024"
+    bucket         = "ade-prosperous-bucket-2024"
     key            = "jjtech/terraform.tfstate"
     region         = "us-east-1"
 
@@ -23,7 +23,7 @@ provider "aws" {
   region = var.region
   default_tags {
     tags = {
-      Name    = "k8s_immersion_batch"
+      Name    = "k8s_tower_batch"
       project = "eks_demo"
     }
   }
