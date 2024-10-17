@@ -113,8 +113,8 @@ module "jenkins_ec2" {
   user_data            = <<-EOF
     #!/bin/bash
     sudo yum install git -y
-    git clone https://github.com/anselmenumbisia/jjtech-maven-sonarqube-nexus-prometheus-project.git
-    cd jjtech-maven-sonarqube-nexus-prometheus-project/installations
+    git clone https://github.com/aajobitaiwo/maven-sonarqube-nexus-prometheus.git
+    cd maven-sonarqube-nexus-prometheus/installations
     sh jenkins-install.sh 
   EOF
 
@@ -141,7 +141,7 @@ module "sonarqube_ec2" {
   key_name           = "us-east-1_nova-kp"
   user_data          = <<-EOF
     #!/bin/bash
-    curl -O https://raw.githubusercontent.com/anselmenumbisia/jjtech-ci-cd-pipeline-project-k8s/main/installation-scripts/sonar.sh
+    curl -O https://raw.githubusercontent.com/aajobitaiwo/jenkins-ci-cd-pipeline-k8s/refs/heads/main/installation-scripts/sonar.sh
     bash sonar.sh
   EOF
 
@@ -168,7 +168,7 @@ module "nexus_ec2" {
   key_name           = "us-east-1_nova-kp"
   user_data          = <<-EOF
     #!/bin/bash
-    curl -O https://raw.githubusercontent.com/anselmenumbisia/jjtech-ci-cd-pipeline-project-k8s/main/installation-scripts/nexus.sh
+    curl -O https://raw.githubusercontent.com/aajobitaiwo/jenkins-ci-cd-pipeline-k8s/refs/heads/main/installation-scripts/nexus.sh
     bash nexus.sh
   EOF
 
